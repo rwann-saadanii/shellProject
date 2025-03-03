@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DB_DIR="./databases"
+DB_DIR="./scripts/databases"
 
 create_database() {
     read -p "Enter database name: " dbname
@@ -21,7 +21,7 @@ connect_database() {
     read -p "Enter database name: " dbname
     if [[ -d "$DB_DIR/$dbname" ]]; then
         echo "Connected to $dbname"
-        source ./table.sh "$DB_DIR/$dbname"
+        source "$(dirname "$0")/table.sh" "$DB_DIR/$dbname"
     else
         echo "Database does not exist!"
     fi

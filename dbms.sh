@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./database.sh
+source ./scripts/database.sh
+
 
 while true; do
     echo "=== Database Management System ==="
